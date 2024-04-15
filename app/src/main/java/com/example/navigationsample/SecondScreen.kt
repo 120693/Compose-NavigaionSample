@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun SecondScreen(name: String, navigationToFirstScreen: (String) -> Unit) {
+fun SecondScreen(name: String, navigationToFirstScreen: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -29,7 +29,7 @@ fun SecondScreen(name: String, navigationToFirstScreen: (String) -> Unit) {
     ) {
         Text(text = "This is the Second Screen", fontSize = 24.sp)
         Text(text = "Welcome $name", fontSize = 24.sp)
-        Button(onClick = { navigationToFirstScreen(name) }) {
+        Button(onClick = { navigationToFirstScreen() }) {
             Text(text = "Go To First Screen")
         }
     }
